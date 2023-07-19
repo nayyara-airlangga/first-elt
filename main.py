@@ -13,7 +13,7 @@ if __name__ == "__main__":
     rows = cursor.fetchall()
 
     with open("data/raw/orders.csv", "w") as f:
-        csv_w = csv.writer(f, delimiter='|')
+        csv_w = csv.writer(f)
         csv_w.writerows(rows)
 
     f.close()
