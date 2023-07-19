@@ -19,3 +19,10 @@ if __name__ == "__main__":
     f.close()
     cursor.close()
     conn.close()
+
+    s3 = aws.new_s3_client()
+    s3.upload_file(
+        Filename="data/raw/orders.csv",
+        Bucket=aws.s3_bucket_name,
+        Key="orders.csv",
+    )
