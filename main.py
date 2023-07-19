@@ -1,10 +1,10 @@
 import csv
 
-from first_elt import db, s3
+from first_elt import aws, db
 
 if __name__ == "__main__":
     db.config_db()
-    s3.config_s3()
+    aws.config_aws()
 
     conn = db.get_db_conn()
     cursor = conn.cursor()

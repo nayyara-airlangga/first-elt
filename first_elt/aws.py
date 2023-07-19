@@ -3,7 +3,7 @@ import boto3
 from configparser import ConfigParser
 
 
-def config_s3():
+def config_aws():
     global account_id, access_key, secret_key, s3_bucket_name
 
     parser = ConfigParser()
@@ -15,7 +15,7 @@ def config_s3():
     s3_bucket_name = parser.get("aws_config", "s3_bucket")
 
 
-def new_client():
+def new_s3_client():
     s3 = boto3.client(
         's3', aws_access_key_id=access_key, aws_secret_access_key=secret_key
     )
